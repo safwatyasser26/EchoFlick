@@ -1,10 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
+@import url('https://fonts.googleapis.com/css2?family=Gravitas+One&family=Roboto:wght@100&display=swap');
 body {
   background-image: url('../public/background.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: 100% 100%;
+  background-size: 100% auto;
+  z-index: -10;
+  
+} 
+
+.glossy {
+ 
+  z-index: -5;
+  top: 0;
+  left: 0;
+  background: linear-gradient(139deg, #282828 0%, rgba(0, 0, 0, 0) 100.91%);
+
+  width: 100svw;
+  height: 100svh;
+  position: fixed;
+  left: 0;
+}
+
+* {
+  font-family: 'Roboto', system-ui;
 }
