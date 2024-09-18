@@ -1,0 +1,16 @@
+.carousel {
+    overflow:hidden;
+    cursor: grab;
+}
+
+.inner-carousel {
+    display: flex;
+
+}
+
+.card {
+    width: calc(100% / 6);
+    border: 1px solid #fff;
+    flex: 1 0 auto;
+    
+}

@@ -1,7 +1,66 @@
+"use client";
+import { useEffect, useState} from "react";
+import Carousel2 from "@components/Carousel2";
+import SearchBox from "@components/SearchBox";
+import Header from "@components/Header";
+import SearchResults from "@components/SearchResults";
+const url = "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1";
+const tv_url = "https://api.themoviedb.org/3/tv/popular?language=en-US&page=1";
+
+const options = {
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjYjM2MjVjOGEzNWY0Mzk5MTZiZTQzODdlM2RmNDA0NiIsIm5iZiI6MTcyNjMyNzE4NS41NDM1MTksInN1YiI6IjY1MDJmY2Y5MWJmMjY2MDBhYzc1ZTg5OSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.4oprD_5L4SHXfDMLnvcMJ92eHGM-Ozjgn6xuazI40Ao",
+  },
+};
+
+
 
 export default function Home() {
+  let [data, setData] = useState([]);
+  let [tvData, setTvData] = useState([]);
+  const [results, setResults] = useState([]);
+  let [isLoading, setIsLoading] = useState(true);
+  useEffect(() => {
+    fetchData(url);
+  }, []);
+  useEffect(() => {
+    fetchTvData(tv_url);
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(url, options);
+      const result = await response.json();
+      setData([...result.results]);
+      setIsLoading(false);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  const fetchTvData = async () => {
+    try {
+      const response = await fetch(tv_url, options);
+      const result = await response.json();
+      setTvData([...result.results]);
+      setIsLoading(false);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
+  console.table(results);
+  
   return (
     <main>
+      <Header />
+      <div className="w-1/2 m-auto relative max-h-50">
+      <SearchBox setResults={setResults}/>
+      <SearchResults results={results}/>
+      </div>
       <div className="banner max-sm:text-center">
         <p className="sm:text-5xl text-3xl font-bold mt-10">
           Find What You’ve Been <br />{" "}
@@ -15,6 +74,11 @@ export default function Home() {
           Sign Up Today
         </button>
       </div>
+      <h1 className="text-3xl font-bold mt-10">Top Movies</h1>
+      {isLoading ? <p>Loading...</p> : <Carousel2 data={data} type="movie"/> }
+
+      <h1 className="text-3xl font-bold mt-10">Top Tv Shows</h1>
+      {isLoading ? <p>Loading...</p> : <Carousel2 data={tvData} type="tv"/> }
       
     </main>
   );
