@@ -4,8 +4,8 @@ import Carousel2 from "@components/Carousel2";
 import SearchBox from "@components/SearchBox";
 import Header from "@components/Header";
 import SearchResults from "@components/SearchResults";
-const url = "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1";
-const tv_url = "https://api.themoviedb.org/3/tv/popular?language=en-US&page=1";
+const url = "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1";
+const tv_url = "https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1";
 
 const options = {
   method: "GET",
