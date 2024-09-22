@@ -17,6 +17,11 @@ import {useState, useEffect, useRef} from 'react';
 const SearchBox = ({setResults}) => {
   const [query, setQuery] = useState('');
   
+  const clearSearch = () => {
+    setQuery('');
+    setResults([]);
+  };
+
   useEffect(() => {
     fetch(`https://api.themoviedb.org/3/search/multi?query=${query}&include_adult=false&language=en-US&page=1`, options)
   .then(res => res.json())
@@ -39,7 +44,13 @@ const SearchBox = ({setResults}) => {
         placeholder='Type Movie, Tv Show, genre or keyword'
         className='search  bg-[#4444447b] rounded-2xl w-full p-1.5 pl-8 mt-8 m-auto'
         onChange={searching}
-        onBlur={() => setQuery('')}
+        onBlur={(event) => {
+          setTimeout(() => {
+            setQuery('');
+            event.target.value = '';
+
+          }, 250);
+        }}
         onFocus={searching}
         />
         

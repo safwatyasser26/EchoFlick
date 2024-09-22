@@ -2,28 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Gravitas+One&family=Roboto:wght@100&display=swap');
-
-.gentleman {
+body {
   background-image: url('../public/background.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% auto;
   z-index: -10;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100%;
-  right: 0;
- 
 } 
-
-
 
 
 .glossy {
  
-  z-index: 0;
+  z-index: -5;
   top: 0;
   left: 0;
   background: linear-gradient(139deg, #282828 0%, rgba(0, 0, 0, 0) 100.91%);

@@ -28,7 +28,7 @@ const Carousel2 = ({data, type}) => {
     <div className=' m-5'>
     <Slider {...setting} className=''>
       {data.map((item) => (
-        <Link href="#" className=''>
+        <Link href={`/${type}/${item.id}`} className='' key={`${item.id}`}>
         <div key={item.id} className="text-center m-5 p-2  flex flex-col items-between transition-transform duration-300 ease-in-out transform hover:scale-110">
           <Image src={`https://image.tmdb.org/t/p/original/${item.poster_path}`} className='w-full h-70' alt="no Image" width={500} height={500} />
           {<span>{item.title || item.name} ({item.release_date?.substring(0, 4) || item.first_air_date?.substring(0,4)}) </span> }

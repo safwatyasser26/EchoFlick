@@ -1,11 +1,15 @@
 "use client";
-import { useEffect, useState} from "react";
+
+import { useEffect, useState } from "react";
 import Carousel2 from "@components/Carousel2";
 import SearchBox from "@components/SearchBox";
-import Header from "@components/Header";
+import Search from "@components/Search";
+import "./globals.css";
 import SearchResults from "@components/SearchResults";
-const url = "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1";
-const tv_url = "https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1";
+const url =
+  "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1";
+const tv_url =
+  "https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1";
 
 const options = {
   method: "GET",
@@ -16,12 +20,10 @@ const options = {
   },
 };
 
-
-
 export default function Home() {
   let [data, setData] = useState([]);
   let [tvData, setTvData] = useState([]);
-  const [results, setResults] = useState([]);
+  // const [results, setResults] = useState([]);
   let [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
     fetchData(url);
@@ -37,7 +39,7 @@ export default function Home() {
       setData([...result.results]);
       setIsLoading(false);
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error("Error fetching data:", error);
     }
   };
 
@@ -48,20 +50,21 @@ export default function Home() {
       setTvData([...result.results]);
       setIsLoading(false);
     } catch (error) {
-      console.error('Error fetching data:', error);
+      console.error("Error fetching data:", error);
     }
   };
 
-  console.table(results);
-  
+  //console.table(results);
+
   return (
     <main>
-      <Header />
-      <div className="w-1/2 m-auto relative max-h-50">
+      <div className="gentleman"></div>
+      {/* <div className="w-1/2 m-auto relative max-h-50">
       <SearchBox setResults={setResults}/>
       <SearchResults results={results}/>
-      </div>
-      <div className="banner max-sm:text-center">
+      </div> */}
+
+      <div className=" max-sm:text-center">
         <p className="sm:text-5xl text-3xl font-bold mt-10">
           Find What You’ve Been <br />{" "}
           <span className="text-main_red">Searching</span> For
@@ -75,11 +78,10 @@ export default function Home() {
         </button>
       </div>
       <h1 className="text-3xl font-bold mt-10">Top Movies</h1>
-      {isLoading ? <p>Loading...</p> : <Carousel2 data={data} type="movie"/> }
+      {isLoading ? <p>Loading...</p> : <Carousel2 data={data} type="movie" />}
 
       <h1 className="text-3xl font-bold mt-10">Top Tv Shows</h1>
-      {isLoading ? <p>Loading...</p> : <Carousel2 data={tvData} type="tv"/> }
-      
+      {isLoading ? <p>Loading...</p> : <Carousel2 data={tvData} type="tv" />}
     </main>
   );
 }
