@@ -36,4 +36,66 @@
 
 * {
   font-family: 'Roboto', system-ui;
+  color: white;
+}
+
+
+
+/* Select component styles */
+.custom-select-container {
+  width: 20%; /* 1/5 width */
+}
+
+.custom-select__control {
+  background-color: rgba(31, 41, 55, 0.2) !important;
+  border-color: #4B5563 !important;
+}
+
+.custom-select__control:hover {
+  border-color: #6B7280 !important;
+}
+
+.custom-select__menu {
+  background-color: #1F2937 !important;
+}
+
+.custom-select__option {
+  background-color: #1F2937 !important;
+  color: white !important;
+}
+
+.custom-select__option--is-focused {
+  background-color: #374151 !important;
+}
+
+.custom-select__option--is-selected {
+  background-color: #4B5563 !important;
+}
+
+.custom-select__single-value {
+  color: white !important;
+}
+
+.custom-select__input-container {
+  color: white !important;
+}
+
+.custom-select__placeholder {
+  color: #9CA3AF !important;
+}
+
+.custom-select__indicator-separator {
+  background-color: #4B5563 !important;
+}
+
+.custom-select__dropdown-indicator {
+  color: #9CA3AF !important;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
 }

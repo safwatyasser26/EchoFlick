@@ -2,6 +2,7 @@
 import {usePathname} from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Info from '@components/Info';
+
 const options = {
   method: 'GET',
   headers: {
