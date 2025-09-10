@@ -9,14 +9,23 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.2.0",
+    "@radix-ui/react-slot": "^1.2.3",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "framer-motion": "^11.5.4",
+    "lucide-react": "^0.543.0",
     "next": "14.2.9",
+    "next-auth": "^4.24.11",
     "react": "^18",
     "react-dom": "^18",
     "react-select": "^5.8.1",
     "react-slick": "^0.30.2",
     "sharp": "^0.33.5",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss-animate": "^1.0.7",
+    "zustand": "^5.0.8"
   },
   "devDependencies": {
     "postcss": "^8",

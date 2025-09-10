@@ -224,12 +224,12 @@ const page = () => {
         <span className="text-main_red">Discover</span> Movies
       </h1>
 
-      <div className="filtering flex space-x-4 m-8 justify-center scrollbar-hide">
+      <div className="filtering flex md:flex-row flex-col space-y-4 md:space-x-4 m-8 justify-center scrollbar-hide">
   <Select
     value={selectedGenre}
     onChange={handleGenreChange}
     options={genreOptions}
-    className="w-1/5 text-white bg-[#111]/20 border border-gray-600 rounded-md"
+    className="md:w-1/5 text-white bg-[#111]/20 border border-gray-600 rounded-md"
     classNamePrefix="react-select"
     placeholder="Select genres"
     isMulti={true}
@@ -240,7 +240,7 @@ const page = () => {
   value={selectedWithoutGenre}
   onChange={handleWithoutGenreChange}
   options={genreOptions}
-  className="w-1/5 text-white bg-[#111]/20 border border-gray-600 rounded-md"
+  className="md:w-1/5 text-white bg-[#111]/20 border border-gray-600 rounded-md"
   classNamePrefix="react-select"
   placeholder="Without genre"
   isMulti={true}
@@ -251,7 +251,7 @@ const page = () => {
     value={selectedPriority}
     onChange={handlePriorityChange}
     options={priorityOptions}
-    className="w-1/5 text-white bg-[#111]/20 border border-gray-600 rounded-md"
+    className="md:w-1/5 text-white bg-[#111]/20 border border-gray-600 rounded-md"
     classNamePrefix="react-select"
     placeholder="Select priority"
     styles={selectStyles}
@@ -261,7 +261,7 @@ const page = () => {
     value={selectedDateFrom}
     onChange={handleDateFromChange}
     options={generateYearOptions()}
-    className="w-1/5 text-white bg-[#111]/20 border border-gray-600 rounded-md"
+    className="md:w-1/5 text-white bg-[#111]/20 border border-gray-600 rounded-md"
     classNamePrefix="react-select"
     placeholder="From Year"
     styles={selectStyles}
@@ -271,7 +271,7 @@ const page = () => {
     value={selectedDateTo}
     onChange={handleDateToChange}
     options={generateYearOptions()}
-    className="w-1/5 text-white bg-[#111]/20 border border-gray-600 rounded-md"
+    className="md:w-1/5 text-white bg-[#111]/20 border border-gray-600 rounded-md"
     classNamePrefix="react-select"
     placeholder="To Year"
     styles={selectStyles}
@@ -279,7 +279,7 @@ const page = () => {
 </div>
 
       {!isLoading && (
-        <div className="skeleton grid grid-cols-4 grid-rows-5 gap-6 mt-4">
+        <div className="skeleton grid grid-cols-2 md:grid-cols-4 grid-rows-5 gap-6 mt-4">
           {results.map((movie) => (
             <Link href={`movie/${movie.id}`} className="w-full" key={movie.id}>
               <div
@@ -293,7 +293,7 @@ const page = () => {
                   alt={movie.title}
                   className="relative"
                 />
-                <h2 className="text-xl font-semibold p-2 text-center backdrop-blur-md absolute bottom-0 w-full">
+                <h2 className="text-sm md:text-xl font-semibold p-2 text-center backdrop-blur-md absolute bottom-0 w-full">
                   {movie.title}
                 </h2>
                 <span className="absolute top-0 right-0 font-bold text-xl p-1 backdrop-blur-md">

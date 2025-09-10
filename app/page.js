@@ -1,5 +1,5 @@
 "use client";
-
+import { signIn, useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import Carousel2 from "@components/Carousel2";
 import SearchBox from "@components/SearchBox";
@@ -54,6 +54,8 @@ export default function Home() {
     }
   };
 
+  const { data: session } = useSession();
+
   //console.table(results);
 
   return (
@@ -73,9 +75,9 @@ export default function Home() {
           The best Recommendation system to find all the movies that are similar
           to what you like
         </p>
-        <button className="bg-main_red py-4 px-8 font-semibold mb-10">
+        {!session && <button onClick={() => signIn()} className="bg-main_red py-4 px-8 font-semibold mb-10">
           Sign Up Today
-        </button>
+        </button>}
       </div>
       <h1 className="text-3xl font-bold mt-10">Top Movies</h1>
       {isLoading ? <p>Loading...</p> : <Carousel2 data={data} type="movie" />}

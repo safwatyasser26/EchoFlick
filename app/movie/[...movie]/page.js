@@ -2,6 +2,7 @@
 import {usePathname} from 'next/navigation';
 import { useEffect, useState } from 'react';
 import Info from '@components/Info';
+import Recommendation from '@components/Recommendation';
 
 const options = {
   method: 'GET',
@@ -50,6 +51,11 @@ const page = () => {
         </div>
         <div>
           {item && <Info item={item} />}
+        </div>
+
+
+        <div>
+          <Recommendation movie_id={502416.0}/>
         </div>
       </div>
     );

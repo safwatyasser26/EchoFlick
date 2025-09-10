@@ -220,12 +220,12 @@ const TvPage = () => {
         <span className="text-main_red">Discover</span> TV Shows
       </h1>
 
-      <div className="filtering flex space-x-4 m-8 justify-center scrollbar-hide">
+      <div className="filtering flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 m-8 justify-center scrollbar-hide min-w-fit">
         <Select
           value={selectedGenre}
           onChange={handleGenreChange}
           options={genreOptions}
-          className="w-1/5 text-white bg-[#111]/20 border border-gray-600 rounded-md"
+          className="md:w-1/5 text-white bg-[#111]/20 border border-gray-600 rounded-md"
           classNamePrefix="react-select"
           placeholder="Select genres"
           isMulti={true}
@@ -235,7 +235,7 @@ const TvPage = () => {
   value={selectedWithoutGenre}
   onChange={handleWithoutGenreChange}
   options={genreOptions}
-  className="w-1/5 text-white bg-[#111]/20 border border-gray-600 rounded-md"
+  className="md:w-1/5 text-white bg-[#111]/20 border border-gray-600 rounded-md"
   classNamePrefix="react-select"
   placeholder="Without genre"
   isMulti={true}
@@ -246,7 +246,7 @@ const TvPage = () => {
           value={selectedPriority}
           onChange={handlePriorityChange}
           options={priorityOptions}
-          className="w-1/5 text-white bg-[#111]/20 border border-gray-600 rounded-md"
+          className="md:w-1/5 text-white bg-[#111]/20 border border-gray-600 rounded-md"
           classNamePrefix="react-select"
           placeholder="Select priority"
           styles={selectStyles}
@@ -256,7 +256,7 @@ const TvPage = () => {
           value={selectedDateFrom}
           onChange={handleDateFromChange}
           options={generateYearOptions()}
-          className="w-1/5 text-white bg-[#111]/20 border border-gray-600 rounded-md"
+          className="md:w-1/5 text-white bg-[#111]/20 border border-gray-600 rounded-md"
           classNamePrefix="react-select"
           placeholder="From Year"
           styles={selectStyles}
@@ -266,7 +266,7 @@ const TvPage = () => {
           value={selectedDateTo}
           onChange={handleDateToChange}
           options={generateYearOptions()}
-          className="w-1/5 text-white bg-[#111]/20 border border-gray-600 rounded-md"
+          className="md:w-1/5 text-white bg-[#111]/20 border border-gray-600 rounded-md"
           classNamePrefix="react-select"
           placeholder="To Year"
           styles={selectStyles}
@@ -274,7 +274,7 @@ const TvPage = () => {
       </div>
 
       {!isLoading && (
-        <div className="skeleton grid grid-cols-4 grid-rows-5 gap-6 mt-4">
+        <div className="skeleton grid grid-cols-2 md:grid-cols-4 grid-rows-5 gap-6 mt-4">
           {results.map((show) => (
             <Link href={`tv/${show.id}`} className="w-full" key={show.id}>
               <div
@@ -288,7 +288,7 @@ const TvPage = () => {
                   alt={show.name}
                   className="relative"
                 />
-                <h2 className="text-xl font-semibold p-2 text-center backdrop-blur-md absolute bottom-0 w-full">
+                <h2 className="text-sm md:text-xl font-semibold p-2 text-center backdrop-blur-md absolute bottom-0 w-full">
                   {show.name}
                 </h2>
                 <span className="absolute top-0 right-0 font-bold text-xl p-1 backdrop-blur-md">

@@ -12,7 +12,14 @@ const Carousel2 = ({data, type}) => {
         infinite: false,
         speed: 500,
         slidesToShow: 4,
-        slidesToScroll: 2
+        slidesToScroll: 2,
+        responsive: [
+          {breakpoint: 768,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+          }}
+        ]
     };
     
     console.log(data)
