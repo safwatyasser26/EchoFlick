@@ -4,7 +4,7 @@ import { FaGithub, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#111] border-t border-[#222] py-8 text-gray-300">
+    <footer className="relative w-screen -mx-[calc((100vw-100%)/2)] bg-black/50 border-t border-[#222] py-8 text-gray-300 bottom-0 mt-8">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 space-y-6 md:space-y-0">
         {/* Brand and developer */}
         <div className="flex flex-col items-center md:items-start">

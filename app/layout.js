@@ -19,6 +19,7 @@ export default function RootLayout({ children }) {
       <body className="bg-main_black text-white px-8 pt-16">
         <div className="glossy"></div>
         <Providers>
+        <div className="flex flex-col justify-between h-screen">
         <Header />
         <Search />
         <main className="relative">
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
         </main>
 
         <Footer />
+        </div>
        </Providers>
         
 

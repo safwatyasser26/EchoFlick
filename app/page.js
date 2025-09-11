@@ -66,7 +66,7 @@ export default function Home() {
       <SearchResults results={results}/>
       </div> */}
 
-      <div className=" max-sm:text-center">
+      <div className="max-sm:text-center">
         <p className="sm:text-5xl text-3xl font-bold mt-10">
           Find What You’ve Been <br />{" "}
           <span className="text-main_red">Searching</span> For
