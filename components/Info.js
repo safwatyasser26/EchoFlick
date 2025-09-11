@@ -8,7 +8,7 @@ const Info = ({ item }) => {
   const { addFavorite, isFavorite } = useFavoritesStore();
 
   
-  return (
+  return (item&&
     <div className="w-full flex flex-col justify-between md:flex-row bg-[#111]/50 mt-8 rounded-3xl">
       <div className="relative md:basis-1/5 md:h-auto w-full mx-auto md:mx-0 h-80 md:w-auto">
         <Image
