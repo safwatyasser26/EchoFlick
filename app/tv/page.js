@@ -276,7 +276,7 @@ const TvPage = () => {
       {!isLoading && (
         <div className="skeleton grid grid-cols-2 md:grid-cols-4 grid-rows-5 gap-6 mt-4">
           {results.map((show) => (
-            <Link href={`tv/${show.id}`} className="w-full" key={show.id}>
+            <Link href={`/tv/${show.id}`} className="w-full" key={show.id}>
               <div
                 key={show.id}
                 className="transition-transform duration-300 ease-in-out transform hover:scale-110 relative"
